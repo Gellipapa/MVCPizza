@@ -8,5 +8,6 @@ namespace _2019TobbformosMvcPizzaEgyTabla.model
 {
     class Megrendelo
     {
+
     }
 }
