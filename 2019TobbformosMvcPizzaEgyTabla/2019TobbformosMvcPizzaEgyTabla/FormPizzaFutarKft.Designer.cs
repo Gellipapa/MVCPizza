@@ -1,4 +1,4 @@
-﻿namespace _2019TobbformosMvcPizzaEgyTabla
+﻿namespace TobbbformosPizzaAlkalmazasEgyTabla
 {
     partial class FormPizzaFutarKft
     {
@@ -157,7 +157,7 @@
             this.törölTesztadatokatToolStripMenuItem,
             this.törölAdatbázisToolStripMenuItem});
             this.adatbázisToolStripMenuItem.Name = "adatbázisToolStripMenuItem";
-            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adatbázisToolStripMenuItem.Text = "Adatbázis";
             // 
             // adatázbázisLétrehozásToolStripMenuItem
