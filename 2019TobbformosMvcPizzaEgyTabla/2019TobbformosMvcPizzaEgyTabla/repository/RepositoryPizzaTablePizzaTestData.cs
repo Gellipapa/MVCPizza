@@ -12,7 +12,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 {
     partial class RepositoryDatabaseTablePizza
     {
-   /*     public void fillPizzasWithTestDataFromTestData(List<Pizza> pizzas)
+        public void fillPizzasWithTestDataFromTestData(List<Pizza> pizzas)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
 
@@ -33,7 +33,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 Debug.WriteLine(e.Message);
                 throw new RepositoryException("Tesztadatok feltöltése sikertelen.");
             }
-        }*/
+        }
 
         public void fillPizzasWithTestDataFromSQLCommand()
         {
@@ -60,5 +60,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 throw new RepositoryException("Tesztadatok feltöltése sikertelen.");
             }
         }
+
+        
     }
 }

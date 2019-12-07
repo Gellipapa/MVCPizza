@@ -11,9 +11,6 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 {
     partial class Repository
     {
-       /// <summary>
-       /// lista létrehozása
-       /// </summary>
         List<Pizza> pizzas;
 
         public List<Pizza> getPizzas()
@@ -27,10 +24,15 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
         }
 
 
-        /// <summary>
-        /// Listából a pizzákat Datatablebe rendezzi
-        /// </summary>
-        /// <returns></returns>
+        public void setTestData()
+        {
+            pizzas.Add(new Pizza(1, "Capricciosa", 900));
+            pizzas.Add(new Pizza(2, "Frutti di Mare", 1100));
+            pizzas.Add(new Pizza(3, "Hawaii", 780));
+            pizzas.Add(new Pizza(4, "Vesuvio", 890));
+            pizzas.Add(new Pizza(5, "Sorrento", 990));
+        }
+
         public DataTable getPizzaDataTableFromList()
         {
             DataTable pizzaDT = new DataTable();
@@ -43,10 +45,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
             }
             return pizzaDT;
         }
-        /// <summary>
-        /// Feltölt a pizzák listáját a datatablebe
-        /// </summary>
-        /// <param name="pizzadt"></param>
+
         private void fillPizzaListFromDataTable(DataTable pizzadt)
         {
             foreach (DataRow row in pizzadt.Rows)
@@ -58,10 +57,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 pizzas.Add(p);
             }
         }
-        /// <summary>
-        /// Pizzát töröl a listából ID alapján
-        /// </summary>
-        /// <param name="id"></param>
+
         public void deletePizzaFromList(int id)
         {
             Pizza p = pizzas.Find(x => x.getId() == id);
@@ -70,11 +66,7 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
             else
                 throw new RepositoryExceptionCantDelete("A pizzát nem lehetett törölni.");
         }
-        /// <summary>
-        /// Frissiti a pizák listáját ID alapján
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="modified"></param>
+
         public void updatePizzaInList(int id,Pizza modified)
         {
             Pizza p = pizzas.Find(x => x.getId() == id);
@@ -83,40 +75,36 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
             else
                 throw new RepositoryExceptionCantModified("A pizza módosítása nem sikerült");
         }
-        /// <summary>
-        /// Új pizza hozzáadása 
-        /// </summary>
-        /// <param name="ujPizza"></param>
+
+        public Pizza getPizza(int id)
+        {
+            return pizzas.Find(x => x.getId() == id);
+        }
+
+        public int getNextPizzaId()
+        {
+            if (pizzas.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return pizzas.Max(x => x.getId()) + 1;
+            }
+            
+        }
+
         public void addPizzaToList(Pizza ujPizza)
         {
             try
             {
                 pizzas.Add(ujPizza);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
-                throw new RepositoryExceptionCantAdd("A pizza hozzáadása nem sikerült");
+                throw new RepositoryExceptionCantAdd("A pizza hozzáadása nem sikerült");  
             }
-        }
-        /// <summary>
-        /// Pizzáknak ID get
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public Pizza getPizza(int id)
-        {
-            return pizzas.Find(x => x.getId() == id);
-        }
-        /// <summary>
-        /// A pizzák listából következő ID adja
-        /// </summary>
-        /// <returns></returns>
-        public int getNextPizzaId()
-        {
-            if (pizzas.Count == 0)
-                return 1;
-            else
-                return pizzas.Max(x => x.getId()) + 1;
+            
         }
     }
 }

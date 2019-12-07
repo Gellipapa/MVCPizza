@@ -1,4 +1,4 @@
-﻿namespace TobbbformosPizzaAlkalmazasEgyTabla
+﻿namespace _2019TobbformosMvcPizzaEgyTabla
 {
     partial class FormPizzaFutarKft
     {
@@ -53,8 +53,8 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.tabControlPizzaFutarKFT = new System.Windows.Forms.TabControl();
             this.tabPagePizzak = new System.Windows.Forms.TabPage();
-            this.buttonMegsem = new System.Windows.Forms.Button();
-            this.panelModositTorolGombok = new System.Windows.Forms.Panel();
+            this.buttonMegse = new System.Windows.Forms.Button();
+            this.panelModositTorol = new System.Windows.Forms.Panel();
             this.buttonModositPizza = new System.Windows.Forms.Button();
             this.buttonTorolPizza = new System.Windows.Forms.Button();
             this.buttonUjMentes = new System.Windows.Forms.Button();
@@ -77,7 +77,7 @@
             this.toolStripToolbar.SuspendLayout();
             this.tabControlPizzaFutarKFT.SuspendLayout();
             this.tabPagePizzak.SuspendLayout();
-            this.panelModositTorolGombok.SuspendLayout();
+            this.panelModositTorol.SuspendLayout();
             this.panelPizza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPizzak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPizzaName)).BeginInit();
@@ -157,7 +157,7 @@
             this.törölTesztadatokatToolStripMenuItem,
             this.törölAdatbázisToolStripMenuItem});
             this.adatbázisToolStripMenuItem.Name = "adatbázisToolStripMenuItem";
-            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.adatbázisToolStripMenuItem.Text = "Adatbázis";
             // 
             // adatázbázisLétrehozásToolStripMenuItem
@@ -269,8 +269,8 @@
             // 
             // tabPagePizzak
             // 
-            this.tabPagePizzak.Controls.Add(this.buttonMegsem);
-            this.tabPagePizzak.Controls.Add(this.panelModositTorolGombok);
+            this.tabPagePizzak.Controls.Add(this.buttonMegse);
+            this.tabPagePizzak.Controls.Add(this.panelModositTorol);
             this.tabPagePizzak.Controls.Add(this.buttonUjMentes);
             this.tabPagePizzak.Controls.Add(this.panelPizza);
             this.tabPagePizzak.Controls.Add(this.buttonUjPizza);
@@ -284,30 +284,30 @@
             this.tabPagePizzak.Text = "Pizzák kezelése";
             this.tabPagePizzak.UseVisualStyleBackColor = true;
             // 
-            // buttonMegsem
+            // buttonMegse
             // 
-            this.buttonMegsem.Location = new System.Drawing.Point(892, 454);
-            this.buttonMegsem.Name = "buttonMegsem";
-            this.buttonMegsem.Size = new System.Drawing.Size(75, 23);
-            this.buttonMegsem.TabIndex = 8;
-            this.buttonMegsem.Text = "Mégsem";
-            this.buttonMegsem.UseVisualStyleBackColor = true;
-            this.buttonMegsem.Visible = false;
-            this.buttonMegsem.Click += new System.EventHandler(this.buttonMegsem_Click);
+            this.buttonMegse.Location = new System.Drawing.Point(892, 451);
+            this.buttonMegse.Name = "buttonMegse";
+            this.buttonMegse.Size = new System.Drawing.Size(75, 23);
+            this.buttonMegse.TabIndex = 8;
+            this.buttonMegse.Text = "Mégse";
+            this.buttonMegse.UseVisualStyleBackColor = true;
+            this.buttonMegse.Visible = false;
+            this.buttonMegse.Click += new System.EventHandler(this.buttonMegse_Click);
             // 
-            // panelModositTorolGombok
+            // panelModositTorol
             // 
-            this.panelModositTorolGombok.Controls.Add(this.buttonModositPizza);
-            this.panelModositTorolGombok.Controls.Add(this.buttonTorolPizza);
-            this.panelModositTorolGombok.Location = new System.Drawing.Point(696, 168);
-            this.panelModositTorolGombok.Name = "panelModositTorolGombok";
-            this.panelModositTorolGombok.Size = new System.Drawing.Size(271, 62);
-            this.panelModositTorolGombok.TabIndex = 7;
-            this.panelModositTorolGombok.Visible = false;
+            this.panelModositTorol.Controls.Add(this.buttonModositPizza);
+            this.panelModositTorol.Controls.Add(this.buttonTorolPizza);
+            this.panelModositTorol.Location = new System.Drawing.Point(696, 151);
+            this.panelModositTorol.Name = "panelModositTorol";
+            this.panelModositTorol.Size = new System.Drawing.Size(271, 78);
+            this.panelModositTorol.TabIndex = 7;
+            this.panelModositTorol.Visible = false;
             // 
             // buttonModositPizza
             // 
-            this.buttonModositPizza.Location = new System.Drawing.Point(16, 19);
+            this.buttonModositPizza.Location = new System.Drawing.Point(16, 27);
             this.buttonModositPizza.Name = "buttonModositPizza";
             this.buttonModositPizza.Size = new System.Drawing.Size(75, 23);
             this.buttonModositPizza.TabIndex = 3;
@@ -317,7 +317,7 @@
             // 
             // buttonTorolPizza
             // 
-            this.buttonTorolPizza.Location = new System.Drawing.Point(152, 19);
+            this.buttonTorolPizza.Location = new System.Drawing.Point(174, 27);
             this.buttonTorolPizza.Name = "buttonTorolPizza";
             this.buttonTorolPizza.Size = new System.Drawing.Size(75, 23);
             this.buttonTorolPizza.TabIndex = 4;
@@ -327,11 +327,11 @@
             // 
             // buttonUjMentes
             // 
-            this.buttonUjMentes.Location = new System.Drawing.Point(892, 425);
+            this.buttonUjMentes.Location = new System.Drawing.Point(892, 422);
             this.buttonUjMentes.Name = "buttonUjMentes";
             this.buttonUjMentes.Size = new System.Drawing.Size(75, 23);
             this.buttonUjMentes.TabIndex = 6;
-            this.buttonUjMentes.Text = "Új mentése";
+            this.buttonUjMentes.Text = "Új mentés";
             this.buttonUjMentes.UseVisualStyleBackColor = true;
             this.buttonUjMentes.Visible = false;
             this.buttonUjMentes.Click += new System.EventHandler(this.buttonUjMentes_Click);
@@ -403,7 +403,7 @@
             // 
             // buttonUjPizza
             // 
-            this.buttonUjPizza.Location = new System.Drawing.Point(696, 425);
+            this.buttonUjPizza.Location = new System.Drawing.Point(696, 422);
             this.buttonUjPizza.Name = "buttonUjPizza";
             this.buttonUjPizza.Size = new System.Drawing.Size(75, 23);
             this.buttonUjPizza.TabIndex = 2;
@@ -414,7 +414,7 @@
             // 
             // buttonBetoltesPizzak
             // 
-            this.buttonBetoltesPizzak.Location = new System.Drawing.Point(783, 25);
+            this.buttonBetoltesPizzak.Location = new System.Drawing.Point(790, 45);
             this.buttonBetoltesPizzak.Name = "buttonBetoltesPizzak";
             this.buttonBetoltesPizzak.Size = new System.Drawing.Size(75, 23);
             this.buttonBetoltesPizzak.TabIndex = 1;
@@ -478,7 +478,7 @@
             this.toolStripToolbar.PerformLayout();
             this.tabControlPizzaFutarKFT.ResumeLayout(false);
             this.tabPagePizzak.ResumeLayout(false);
-            this.panelModositTorolGombok.ResumeLayout(false);
+            this.panelModositTorol.ResumeLayout(false);
             this.panelPizza.ResumeLayout(false);
             this.panelPizza.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPizzak)).EndInit();
@@ -530,9 +530,9 @@
         private System.Windows.Forms.Label labelPizzaAzonosito;
         private System.Windows.Forms.ErrorProvider errorProviderPizzaName;
         private System.Windows.Forms.ErrorProvider errorProviderPizzaPrice;
-        private System.Windows.Forms.Panel panelModositTorolGombok;
+        private System.Windows.Forms.Panel panelModositTorol;
         private System.Windows.Forms.Button buttonUjMentes;
-        private System.Windows.Forms.Button buttonMegsem;
+        private System.Windows.Forms.Button buttonMegse;
     }
 }
 
