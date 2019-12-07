@@ -75,5 +75,16 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.model
             else
                 return false;
         }
+        /// <summary>
+        /// Frissitési metódus
+        /// </summary>
+        /// <param name="modified"></param>
+        public void update(Megrendelo modified)
+        {
+            this.name = modified.name;
+            this.address = modified.address;
+            this.price = modified.price;
+        }
+
     }
 }
