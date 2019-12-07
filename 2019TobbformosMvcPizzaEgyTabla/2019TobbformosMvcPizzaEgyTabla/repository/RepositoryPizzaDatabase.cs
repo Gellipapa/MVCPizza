@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TobbbformosPizzaAlkalmazasEgyTabla.Model;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
+using TobbbformosPizzaAlkalmazasEgyTabla.model;
 
 namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 {
@@ -20,18 +21,10 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
         /// </summary>
         public RepositoryDatabase()
         {
-            connectionStringCreate =
-                "SERVER=\"localhost\";"
-                + "DATABASE=\"test\";"
-                + "UID=\"root\";"
-                + "PASSWORD=\"\";"
-                + "PORT=\"3306\";";
-            connectionString =
-                "SERVER=\"localhost\";"
-                + "DATABASE=\"csarp\";"
-                + "UID=\"root\";"
-                + "PASSWORD=\"\";"
-                + "PORT=\"3306\";";
+            ConnectionString conn =  new ConnectionString();
+
+            conn.getCreateString();
+            conn.getConnectionString();
         }
 
         /// <summary>
