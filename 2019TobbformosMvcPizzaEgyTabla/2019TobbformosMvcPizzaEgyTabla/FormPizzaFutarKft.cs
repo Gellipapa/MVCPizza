@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace _2019TobbformosMvcPizzaEgyTabla
+namespace TobbbformosPizzaAlkalmazasEgyTabla
 {
     public partial class FormPizzaFutarKft : Form
     {
@@ -41,7 +41,5 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         {
             tabControlPizzaFutarKFT.SelectTab("tabPagePizzak");
         }
-
-        
     }
 }

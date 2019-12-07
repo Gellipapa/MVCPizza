@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="model\ConnectionString.cs" />
     <Compile Include="model\Megrendelo.cs" />
+    <Compile Include="model\MegrendeloDatabase.cs" />
     <Compile Include="model\ModelExeption.cs" />
     <Compile Include="model\ModelMegrendeloNotValidAddressException.cs" />
     <Compile Include="model\ModelMegrendeloNotValidNameException.cs" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla.model
+namespace _2019TobbformosMvcPizzaEgyTabla.model.model
 {
     [Serializable]
     internal class ModelMegrendeloNotValidNameException : Exception

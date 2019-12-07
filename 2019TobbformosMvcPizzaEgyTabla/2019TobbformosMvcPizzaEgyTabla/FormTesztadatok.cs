@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using TobbbformosPizzaAlkalmazasEgyTabla.Repository;
 
-namespace _2019TobbformosMvcPizzaEgyTabla
+namespace TobbbformosPizzaAlkalmazasEgyTabla
 {
     public partial class FormPizzaFutarKft : Form
     {
@@ -52,8 +52,6 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             {
                 kiirHibauzenetet("Adatbázis törlési hiba!");
             }
-
-
         }
 
         private void feltöltésTesztadatokkalToolStripMenuItem_Click(object sender, EventArgs e)

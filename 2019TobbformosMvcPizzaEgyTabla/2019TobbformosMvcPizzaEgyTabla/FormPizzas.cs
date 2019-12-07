@@ -12,7 +12,7 @@ using TobbbformosPizzaAlkalmazasEgyTabla.Repository;
 using TobbbformosPizzaAlkalmazasEgyTabla.Model;
 using System.Diagnostics;
 
-namespace _2019TobbformosMvcPizzaEgyTabla
+namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
 {
     public partial class FormPizzaFutarKft : Form
     {
@@ -35,17 +35,33 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             repo.setPizzas(rtp.getPizzasFromDatabaseTable());
             frissitAdatokkalDataGriedViewt();
             beallitPizzaDataGriViewt();
-            panelPizza.Visible = false;
-            bealltGombokatIndulaskor();
+            beallitGombokatIndulaskor();            
 
             dataGridViewPizzak.SelectionChanged += DataGridViewPizzak_SelectionChanged;
         }
 
+        private void beallitGombokatIndulaskor()
+        {
+            panelPizza.Visible = false;
+            panelModositTorolGombok.Visible = false ;
+            if (dataGridViewPizzak.SelectedRows.Count != 0)
+                buttonUjPizza.Visible = false;
+            else
+                buttonUjPizza.Visible = true;
+        }
+
         private void DataGridViewPizzak_SelectionChanged(object sender, EventArgs e)
         {
+            
+            if (ujAdatfelvitel)
+            {
+                beallitGombokatKattintaskor();
+            }           
             if (dataGridViewPizzak.SelectedRows.Count == 1)
             {
                 panelPizza.Visible = true;
+                panelModositTorolGombok.Visible = true;
+                buttonUjPizza.Visible = true;
                 textBoxPizzaAzonosito.Text =
                     dataGridViewPizzak.SelectedRows[0].Cells[0].Value.ToString();
                 textBoxPizzaNev.Text =
@@ -54,7 +70,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                     dataGridViewPizzak.SelectedRows[0].Cells[2].Value.ToString();
             }
             else
+            {
                 panelPizza.Visible = false;
+                panelModositTorolGombok.Visible = false;
+                buttonUjPizza.Visible = false;
+            }
         }
 
         private void frissitAdatokkalDataGriedViewt()
@@ -86,13 +106,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         private void buttonTorolPizza_Click(object sender, EventArgs e)
         {
             torolHibauzenetet();
-            
-            if(dataGridViewPizzak.Rows ==null || dataGridViewPizzak.Rows.Count == 0)
-            {
+            if ((dataGridViewPizzak.Rows == null) ||
+                (dataGridViewPizzak.Rows.Count == 0))
                 return;
-            }
-            
-
             //A felhasználó által kiválasztott sor a DataGridView-ban            
             int sor = dataGridViewPizzak.SelectedRows[0].Index;
             if (MessageBox.Show(
@@ -102,7 +118,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 //1. törölni kell a listából
-                int id = -1;               
+                int id = -1;
                 if (!int.TryParse(
                          dataGridViewPizzak.SelectedRows[0].Cells[0].Value.ToString(),
                          out id))
@@ -128,6 +144,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 }
                 //3. frissíteni kell a DataGridView-t  
                 frissitAdatokkalDataGriedViewt();
+                if (dataGridViewPizzak.SelectedRows.Count <= 0)
+                {
+                    buttonUjPizza.Visible = true;
+                }
+                beallitPizzaDataGriViewt();
             }
         }
         private void buttonModositPizza_Click(object sender, EventArgs e)
@@ -148,12 +169,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 {
                     repo.updatePizzaInList(azonosito, modosult);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     kiirHibauzenetet(ex.Message);
                     return;
                 }
-                
                 //2. módosítani az adatbáziba
                 RepositoryDatabaseTablePizza rdtp = new RepositoryDatabaseTablePizza();
                 try
@@ -184,12 +204,104 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             { }
         }
 
+        private void buttonUjMentes_Click(object sender, EventArgs e)
+        {
+            torolHibauzenetet();
+            errorProviderPizzaName.Clear();
+            errorProviderPizzaPrice.Clear();
+            try
+            {
+                Pizza ujPizza = new Pizza(
+                    Convert.ToInt32(textBoxPizzaAzonosito.Text),
+                    textBoxPizzaNev.Text,
+                    textBoxPizzaAr.Text
+                    );
+                int azonosito = Convert.ToInt32(textBoxPizzaAzonosito.Text);
+                //1. Hozzáadni a listához
+                try
+                {
+                    repo.addPizzaToList(ujPizza);
+                }
+                catch(Exception ex)
+                {
+                    kiirHibauzenetet(ex.Message);
+                    return;
+                }
+                //2. Hozzáadni az adatbázishoz
+                RepositoryDatabaseTablePizza rdtp = new RepositoryDatabaseTablePizza();
+                try
+                {
+                    rdtp.insertPizzaToDatabase(ujPizza);
+                }
+                catch (Exception ex)
+                {
+                    kiirHibauzenetet(ex.Message);
+                }
+                //3. Frissíteni a DataGridView-t
+                beallitGombokatUjPizzaMegsemEsMentes();
+                frissitAdatokkalDataGriedViewt();
+                if (dataGridViewPizzak.SelectedRows.Count == 1)
+                {
+                    beallitPizzaDataGriViewt();
+                }
+
+            }
+            catch (ModelPizzaNotValidNameExeption nvn)
+            {
+                errorProviderPizzaName.SetError(textBoxPizzaNev, nvn.Message);
+            }
+            catch (ModelPizzaNotValidPriceExeption nvp)
+            {
+                errorProviderPizzaName.SetError(textBoxPizzaAr, nvp.Message);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         private void buttonUjPizza_Click(object sender, EventArgs e)
         {
             ujAdatfelvitel = true;
             beallitGombokatTextboxokatUjPizzanal();
             int ujPizzaAzonosito = repo.getNextPizzaId();
             textBoxPizzaAzonosito.Text = ujPizzaAzonosito.ToString();
+        }
+
+        private void buttonMegsem_Click(object sender, EventArgs e)
+        {
+            beallitGombokatUjPizzaMegsemEsMentes();
+        }    
+
+        private void beallitGombokatUjPizzaMegsemEsMentes()
+        {
+            if ((dataGridViewPizzak.Rows != null) &&
+                (dataGridViewPizzak.Rows.Count > 0))
+                dataGridViewPizzak.Rows[0].Selected = true;
+            buttonUjMentes.Visible = false;
+            buttonMegsem.Visible = false;
+            panelModositTorolGombok.Visible = true;
+            ujAdatfelvitel = false;
+
+            textBoxPizzaNev.Text = string.Empty;
+            textBoxPizzaAr.Text = string.Empty;
+          
+        }
+        private void beallitGombokatTextboxokatUjPizzanal()
+        {
+            panelPizza.Visible = true;
+            panelModositTorolGombok.Visible = false;
+            textBoxPizzaNev.Text = string.Empty;
+            textBoxPizzaAr.Text = string.Empty;
+        }
+
+        private void beallitGombokatKattintaskor()
+        {
+            ujAdatfelvitel = false;
+            buttonUjMentes.Visible = false;
+            buttonMegsem.Visible = false;
+            panelModositTorolGombok.Visible = true;
+            errorProviderPizzaName.Clear();
+            errorProviderPizzaPrice.Clear();
         }
 
         private void textBoxPizzaNev_TextChanged(object sender, EventArgs e)
@@ -204,113 +316,20 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         private void kezelUjMegsemGombokat()
         {
-            if(ujAdatfelvitel == false)
-            {
+            if (ujAdatfelvitel == false)
                 return;
-            }
-            if ((textBoxPizzaNev.Text != string.Empty || textBoxPizzaAr.Text != string.Empty))
+            if ((textBoxPizzaNev.Text != string.Empty) ||
+                (textBoxPizzaAr.Text != string.Empty))
             {
-
                 buttonUjMentes.Visible = true;
-                buttonMegse.Visible = true;
-
+                buttonMegsem.Visible = true;
             }
             else
             {
                 buttonUjMentes.Visible = false;
-                buttonMegse.Visible = false;
+                buttonMegsem.Visible = false;
             }
         }
 
-        private void bealltGombokatIndulaskor()
-        {
-            panelPizza.Visible = false;
-            panelModositTorol.Visible = true;
-            buttonUjPizza.Visible = true;
-        }
-
-        private void beallitGombokatTextboxokatUjPizzanal()
-        {
-            panelPizza.Visible = true;
-            panelModositTorol.Visible = true;
-            textBoxPizzaAr.Text = "";
-            textBoxPizzaNev.Text = "";
-        }
-
-        private void buttonMegse_Click(object sender, EventArgs e)
-        {
-            beallitGombokatTextboxokatUjPizzaMegsem();
-        }
-
-        private void beallitGombokatTextboxokatUjPizzaMegsem()
-        {
-            dataGridViewPizzak.Rows[0].Selected=true;
-            if(dataGridViewPizzak.Rows!=null || dataGridViewPizzak.Rows.Count > 0)
-            {
-
-            }
-            panelModositTorol.Visible = true;
-            buttonUjMentes.Visible = false;
-            buttonMegse.Visible = false;
-            ujAdatfelvitel = false;
-
-        }
-
-        private void buttonUjMentes_Click(object sender, EventArgs e)
-        {
-            torolHibauzenetet();
-            errorProviderPizzaName.Clear();
-            errorProviderPizzaPrice.Clear();
-
-            try
-            {
-               
-                Pizza ujPizza = new Pizza(Convert.ToInt32(textBoxPizzaAzonosito.Text), textBoxPizzaNev.Text, textBoxPizzaAr.Text);
-                int azonosito = Convert.ToInt32(textBoxPizzaAzonosito.Text);
-
-                //1. Hozzáadni a listához
-                try
-                {
-                    repo.addPizzaToList(ujPizza);
-                }
-                catch(Exception ex)
-                {
-                    kiirHibauzenetet(ex.Message);
-                    return;
-                }
-
-                //2.Hozzáadni az adatbázishoz
-
-                RepositoryDatabaseTablePizza rdtp = new RepositoryDatabaseTablePizza();
-                try
-                {
-                    rdtp.insertPizzaToDatabase(ujPizza);
-                }
-                catch(Exception ex)
-                {
-                    kiirHibauzenetet(ex.Message);
-                }
-
-
-
-                //3.Frissíteni a DataGridViewt
-                frissitAdatokkalDataGriedViewt();
-                beallitGombokatTextboxokatUjPizzaMegsem();
-               
-
-            }
-            catch(ModelPizzaNotValidNameExeption nvm)
-            {
-                errorProviderPizzaName.SetError(textBoxPizzaNev, nvm.Message);
-            }
-            catch(ModelPizzaNotValidPriceExeption nvp)
-            {
-                errorProviderPizzaPrice.SetError(textBoxPizzaAr, nvp.Message);
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
     }
 }

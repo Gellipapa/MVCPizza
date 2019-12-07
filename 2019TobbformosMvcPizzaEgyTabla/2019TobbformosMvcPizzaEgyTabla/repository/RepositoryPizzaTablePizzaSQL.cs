@@ -89,7 +89,6 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 Debug.WriteLine(id + " idéjű pizza módosítása nem sikerült.");
                 throw new RepositoryException("Sikertelen módosítás az adatbázisból.");
             }
-
         }
 
         public void insertPizzaToDatabase(Pizza ujPizza)
@@ -102,14 +101,13 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
-
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujPizza + "pizza beszúrása az adatbázisba nem sikerült!");
-                throw new RepositoryException("Sikertelen a beszúrás az adatbázisba!");
+                Debug.WriteLine(ujPizza + " pizza beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
             }
         }
     }
