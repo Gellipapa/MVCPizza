@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace _2019TobbformosMvcPizzaEgyTabla.model.model
+namespace TobbbformosPizzaAlkalmazasEgyTabla.Model
 {
     [Serializable]
     internal class ModelMegrendeloNotValidPriceException : Exception

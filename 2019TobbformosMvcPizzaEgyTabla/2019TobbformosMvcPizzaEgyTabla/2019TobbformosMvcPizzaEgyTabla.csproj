@@ -61,7 +61,11 @@
     </Compile>
     <Compile Include="model\ConnectionString.cs" />
     <Compile Include="model\ModelExeption.cs" />
+    <Compile Include="model\ModelMegrendeloNotValidAddressException.cs" />
+    <Compile Include="model\ModelMegrendeloNotValidNameException.cs" />
+    <Compile Include="model\ModelMegrendeloNotValidPriceException.cs" />
     <Compile Include="model\ModelPizzaNotValidNameExeption.cs" />
+    <Compile Include="model\Megrendelo2.cs" />
     <Compile Include="model\Pizza.cs" />
     <Compile Include="model\PizzaDatabase.cs" />
     <Compile Include="Program.cs" />
