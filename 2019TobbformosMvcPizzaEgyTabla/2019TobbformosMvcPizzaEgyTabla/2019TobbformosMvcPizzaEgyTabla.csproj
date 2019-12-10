@@ -67,6 +67,7 @@
     <Compile Include="model\ModelPizzaNotValidNameExeption.cs" />
     <Compile Include="model\Megrendelo2.cs" />
     <Compile Include="model\Pizza.cs" />
+    <Compile Include="model\Megrendelo2Database.cs" />
     <Compile Include="model\PizzaDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
