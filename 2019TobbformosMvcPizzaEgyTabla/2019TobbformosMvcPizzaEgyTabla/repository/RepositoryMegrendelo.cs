@@ -103,6 +103,26 @@ namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
                 throw new RepositoryExceptionCantModified("A megrendelő módosítása nem sikerült");
         }
 
+        /// <summary>
+        /// get id metodus
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Megrendelo2 getMegrendelo(int id)
+        {
+            return orders.Find(x => x.getId() == id);
+        }
+        /// <summary>
+        /// Következő id adása
+        /// </summary>
+        /// <returns></returns>
+        public int getNextMegrendeloId()
+        {
+            if (orders.Count == 0)
+                return 1;
+            else
+                return orders.Max(x => x.getId()) + 1;
+        }
 
 
 
