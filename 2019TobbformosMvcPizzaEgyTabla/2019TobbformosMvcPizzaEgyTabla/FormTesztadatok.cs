@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using TobbbformosPizzaAlkalmazasEgyTabla.Repository;
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla
+namespace _2019TobbformosMvcPizzaEgyTabla
 {
     public partial class FormPizzaFutarKft : Form
     {

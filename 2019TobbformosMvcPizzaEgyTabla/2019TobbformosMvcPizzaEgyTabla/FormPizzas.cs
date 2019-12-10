@@ -12,7 +12,7 @@ using TobbbformosPizzaAlkalmazasEgyTabla.Repository;
 using TobbbformosPizzaAlkalmazasEgyTabla.Model;
 using System.Diagnostics;
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
+namespace _2019TobbformosMvcPizzaEgyTabla
 {
     public partial class FormPizzaFutarKft : Form
     {

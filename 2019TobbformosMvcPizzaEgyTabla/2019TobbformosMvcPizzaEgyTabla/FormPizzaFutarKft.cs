@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla
+namespace _2019TobbformosMvcPizzaEgyTabla
 {
     public partial class FormPizzaFutarKft : Form
     {
