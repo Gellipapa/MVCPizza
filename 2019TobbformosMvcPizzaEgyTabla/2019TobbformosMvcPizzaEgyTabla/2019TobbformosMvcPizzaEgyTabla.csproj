@@ -81,6 +81,7 @@
     <Compile Include="repository\RepositoryPizzaDatabase.cs" />
     <Compile Include="repository\RepositoryMegrendeloTableDatabase .cs" />
     <Compile Include="repository\RepositoryPizzaTablePizza.cs" />
+    <Compile Include="repository\RepositoryMegrendeloTableMegrendeloSQL.cs" />
     <Compile Include="repository\RepositoryPizzaTablePizzaSQL.cs" />
     <Compile Include="repository\RepositoryPizzaTablePizzaTestData.cs" />
     <EmbeddedResource Include="FormPizzaFutarKft.resx">
