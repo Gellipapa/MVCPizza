@@ -12,15 +12,15 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
     partial class Repository
     {
         //megrendelo listája
-        List<Pizza> orders;
+        List<Megrendelo2> orders;
 
         //megrendelo get lista
-        public List<Pizza> getOrders()
+        public List<Megrendelo2> getOrders()
         {
             return orders;
         }
         //megrendelo set lista
-        public void setOrders(List<Pizza>orders)
+        public void setOrders(List<Megrendelo2>orders)
         {
             this.orders = orders;
         }
