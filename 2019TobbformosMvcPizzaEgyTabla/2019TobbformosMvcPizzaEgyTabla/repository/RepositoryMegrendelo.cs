@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data;
-using TobbbformosPizzaAlkalmazasEgyTabla.Model;
+using TobbformosPizzaAlkalmazasEgyTabla.Model;
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
+namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
 {
     partial class Repository
     {
@@ -59,6 +59,53 @@ namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
                 orders.Add(m);
             }
         }
+        /// <summary>
+        /// Megrendeloket törli a listából
+        /// </summary>
+        /// <param name="id"></param>
+        public void deleteMegrendeloFromList(int id)
+        {
+            Megrendelo2 m = orders.Find(x => x.getId() == id);
+            if (m != null)
+                orders.Remove(m);
+            else
+                throw new RepositoryExceptionCantDelete("A megrendelőt nem lehetett törölni.");
+        }
+
+        /// <summary>
+        /// Megrendelőt add a listához
+        /// </summary>
+        /// <param name="ujPizza"></param>
+        public void addMegrendeloToList(Megrendelo2 Ujmegrendelo)
+        {
+            try
+            {
+                orders.Add(Ujmegrendelo);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryExceptionCantAdd("A megrendelő hozzáadása nem sikerült");
+            }
+        }
+
+
+        /// <summary>
+        /// Frissiti a megrendelo listát
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="modified"></param>
+        public void updateMegrendeloInList(int id, Megrendelo2 modified)
+        {
+            Megrendelo2 m = orders.Find(x => x.getId() == id);
+            if (m != null)
+                m.update(modified);
+            else
+                throw new RepositoryExceptionCantModified("A megrendelő módosítása nem sikerült");
+        }
+
+
+
+
 
     }
 }

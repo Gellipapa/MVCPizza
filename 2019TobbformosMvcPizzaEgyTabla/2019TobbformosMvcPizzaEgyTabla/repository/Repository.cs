@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TobbbformosPizzaAlkalmazasEgyTabla.Model;
+using TobbformosPizzaAlkalmazasEgyTabla.Model;
 
-namespace TobbbformosPizzaAlkalmazasEgyTabla.Repository
+namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
 {
     partial class Repository
     {
