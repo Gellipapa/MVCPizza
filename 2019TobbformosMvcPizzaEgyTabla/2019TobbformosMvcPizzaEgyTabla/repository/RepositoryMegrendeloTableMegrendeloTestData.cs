@@ -24,7 +24,7 @@ namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
                 connection.Open();
 
                 string query =
-                    "INSERT INTO `pmegrendelo` (`id`, `name`,`address`,`par`) VALUES " +
+                    "INSERT INTO `pmegrendelo` (`id`, `name`,`address`,`price`) VALUES " +
                             " (1, 'Jancsi','Budapest',1500), " +
                             " (2, 'Maris','Kalocsa',1100), " +
                             " (3, 'Károly','Szeged',1800), " +

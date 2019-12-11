@@ -16,6 +16,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
     {
         RepositoryDatabase rd = new RepositoryDatabase();
         RepositoryDatabaseTablePizza rtp = new RepositoryDatabaseTablePizza();
+        RepositoryDatabaseTableMegrendelo rdtm = new RepositoryDatabaseTableMegrendelo();
 
         private void torolHibauzenetet()
         {
@@ -60,7 +61,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             {
                 torolHibauzenetet();
                 rtp.createTablePizza();
+                rdtm.createTableMegrendelo();
                 rtp.fillPizzasWithTestDataFromSQLCommand();
+                rdtm.fillOrdersWithTestDataFromSQLCommand();
             }
             catch (Exception ex)
             {
@@ -74,6 +77,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             {
                 torolHibauzenetet();
                 rtp.deleteTablePizza();
+                rdtm.deleteTableMegrendelo();
             }
             catch (Exception ex)
             {

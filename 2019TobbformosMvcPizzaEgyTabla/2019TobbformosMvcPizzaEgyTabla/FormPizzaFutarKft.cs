@@ -87,6 +87,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         }
 
+        private void feltöltésTesztadatokkalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //private void textBoxOrdersPrice_TextChanged(object sender, EventArgs e)
         //{
 

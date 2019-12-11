@@ -22,8 +22,8 @@ namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
         public RepositoryDatabaseTableMegrendelo()
         {
             ConnectionString conn = new ConnectionString();
-            conn.ConnectionStringCreate();
-            conn.getConnectionString();
+            connectionStringCreate = conn.ConnectionStringCreate();
+            connectionString = conn.getConnectionString();
         }
 
         /// <summary>
