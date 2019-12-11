@@ -106,8 +106,8 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             ordersDT.Columns[1].Caption = "Megrendelő név";
             ordersDT.Columns[2].ColumnName = "Cím";
             ordersDT.Columns[2].Caption = "Megrendelő címe";
-            ordersDT.Columns[3].ColumnName = "Ára";
-            ordersDT.Columns[3].Caption = "Pizza ár";
+            //ordersDT.Columns[3].ColumnName = "Ára";
+            //ordersDT.Columns[3].Caption = "Pizza ár";
 
             dataGridViewOrders.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;

@@ -199,7 +199,7 @@
             this.feltöltésTesztadatokkalToolStripMenuItem.Name = "feltöltésTesztadatokkalToolStripMenuItem";
             this.feltöltésTesztadatokkalToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.feltöltésTesztadatokkalToolStripMenuItem.Text = "Feltöltés tesztadatokkal";
-            this.feltöltésTesztadatokkalToolStripMenuItem.Click += new System.EventHandler(this.feltöltésTesztadatokkalToolStripMenuItem_Click);
+          //  this.feltöltésTesztadatokkalToolStripMenuItem.Click += new System.EventHandler(this.feltöltésTesztadatokkalToolStripMenuItem_Click);
             // 
             // törölTesztadatokatToolStripMenuItem
             // 
