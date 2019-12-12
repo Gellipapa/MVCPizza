@@ -82,7 +82,7 @@
             this.textBoxOrdersID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelMegrendeloModositTorolGombok = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonTorolMegrendelot = new System.Windows.Forms.Button();
             this.buttonMegrendeloModosit = new System.Windows.Forms.Button();
             this.buttonMegrendeloBetoltes = new System.Windows.Forms.Button();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
@@ -199,7 +199,7 @@
             this.feltöltésTesztadatokkalToolStripMenuItem.Name = "feltöltésTesztadatokkalToolStripMenuItem";
             this.feltöltésTesztadatokkalToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.feltöltésTesztadatokkalToolStripMenuItem.Text = "Feltöltés tesztadatokkal";
-          //  this.feltöltésTesztadatokkalToolStripMenuItem.Click += new System.EventHandler(this.feltöltésTesztadatokkalToolStripMenuItem_Click);
+            this.feltöltésTesztadatokkalToolStripMenuItem.Click += new System.EventHandler(this.feltöltésTesztadatokkalToolStripMenuItem_Click);
             // 
             // törölTesztadatokatToolStripMenuItem
             // 
@@ -587,21 +587,22 @@
             // 
             // panelMegrendeloModositTorolGombok
             // 
-            this.panelMegrendeloModositTorolGombok.Controls.Add(this.button2);
+            this.panelMegrendeloModositTorolGombok.Controls.Add(this.buttonTorolMegrendelot);
             this.panelMegrendeloModositTorolGombok.Controls.Add(this.buttonMegrendeloModosit);
             this.panelMegrendeloModositTorolGombok.Location = new System.Drawing.Point(685, 165);
             this.panelMegrendeloModositTorolGombok.Name = "panelMegrendeloModositTorolGombok";
             this.panelMegrendeloModositTorolGombok.Size = new System.Drawing.Size(291, 73);
             this.panelMegrendeloModositTorolGombok.TabIndex = 2;
             // 
-            // button2
+            // buttonTorolMegrendelot
             // 
-            this.button2.Location = new System.Drawing.Point(183, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Töröl";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonTorolMegrendelot.Location = new System.Drawing.Point(183, 29);
+            this.buttonTorolMegrendelot.Name = "buttonTorolMegrendelot";
+            this.buttonTorolMegrendelot.Size = new System.Drawing.Size(75, 23);
+            this.buttonTorolMegrendelot.TabIndex = 4;
+            this.buttonTorolMegrendelot.Text = "Töröl";
+            this.buttonTorolMegrendelot.UseVisualStyleBackColor = true;
+            this.buttonTorolMegrendelot.Click += new System.EventHandler(this.buttonTorolMegrendelot_Click);
             // 
             // buttonMegrendeloModosit
             // 
@@ -757,7 +758,7 @@
         private System.Windows.Forms.TextBox textBoxOrdersID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelMegrendeloModositTorolGombok;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonTorolMegrendelot;
         private System.Windows.Forms.Button buttonMegrendeloModosit;
         private System.Windows.Forms.Button buttonMegrendeloBetoltes;
         private System.Windows.Forms.DataGridView dataGridViewOrders;

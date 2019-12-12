@@ -39,7 +39,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             //javítani mert nem fog müködni ha átírom
             dataGridViewOrders.SelectionChanged += dataGridViewOrders_SelectionChanged;
         }
-
+        /// <summary>
+        /// Megrendelo panel hívó metódus
+        /// </summary>
         public void beallitMegrendeloGombokat()
         {
             panelMegrendloAdatokPanel.Visible = false;
@@ -49,7 +51,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             else
                 buttonUjMegrendelo.Visible = true;
         }
-
+        /// <summary>
+        /// DataGridview Kijelölési része
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewOrders_SelectionChanged(object sender, EventArgs e)
         {
             if (ujAdatfelvitelMegrendelo)
@@ -77,7 +83,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 buttonUjMegrendelo.Visible = false;
             }
         }
-
+        /// <summary>
+        /// Modosit és töröl gomb meghívási metódus
+        /// </summary>
         private void beallitMegrendeloGombokatKattintaskor()
         {
             ujAdatfelvitelMegrendelo = false;
@@ -88,14 +96,18 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             errorProviderMegrendeloAddress.Clear();
             errorProviderMegrendeloPrice.Clear();
         }
-
+        /// <summary>
+        /// Adatokat frissit datagridviewba
+        /// </summary>
         private void frissitMegrendeloAdatokkalDataGriedViewt()
         {
             ordersDT = repomegrendelo.getMegrendeloDataTableFromList();
             dataGridViewOrders.DataSource = null;
             dataGridViewOrders.DataSource = ordersDT;
         }
-
+        /// <summary>
+        /// beállítja a datagridview oszlop neveit
+        /// </summary>
         private void beallitMegrendeloDataGriViewt()
         {
             ordersDT.Columns[0].ColumnName = "Azonosító";
@@ -114,9 +126,15 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             dataGridViewOrders.AllowUserToAddRows = false;
             dataGridViewOrders.MultiSelect = false;
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Törlés gomb 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonTorolMegrendelot_Click(object sender, EventArgs e)
         {
+
+
 
             torolHibauzenetet();
             if ((dataGridViewOrders.Rows == null) ||
@@ -166,6 +184,12 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         }
 
+        
+        /// <summary>
+        /// Módosit gomb
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonMegrendeloModosit_Click(object sender, EventArgs e)
         {
             torolHibauzenetet();
@@ -225,7 +249,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             catch (Exception ex)
             { }
         }
-
+        /// <summary>
+        /// Uj megrendelési gomb
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonUjmegrendeloMentese_Click(object sender, EventArgs e)
         {
             torolHibauzenetet();
@@ -287,7 +315,11 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             }
 
         }
-
+        /// <summary>
+        /// uj megrendelo panel előhozzása
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonUjMegrendelo_Click(object sender, EventArgs e)
         {
             ujAdatfelvitelMegrendelo = true;
@@ -295,7 +327,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             int ujMegrendeloAzonosito = repomegrendelo.getNextMegrendeloId();
             textBoxOrdersID.Text = ujMegrendeloAzonosito.ToString();
         }
-
+        /// <summary>
+        /// uj megrendelőnél lévő gomb üres textboxokat készít
+        /// </summary>
         private void beallitGombokatTextboxokatUjMegrendelo()
         {
             panelMegrendloAdatokPanel.Visible = true;
@@ -304,7 +338,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             textBoxOrderAddress.Text = string.Empty;
             textBoxOrdersPrice.Text = string.Empty;
         }
-
+        /// <summary>
+        /// megsem gomb
+        /// </summary>
         private void beallitGombokatUjMegrendeloMegsemEsMentes()
         {
             if ((dataGridViewOrders.Rows != null) &&
@@ -335,15 +371,9 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         {
             kezelMegrendeloUjMegsemGombokat();
         }
-
-
-
-
-
-
-
-
-
+        /// <summary>
+        /// kezel gomb megjelenítést ha textbox nem üres
+        /// </summary>
         private void kezelMegrendeloUjMegsemGombokat()
         {
             if (ujAdatfelvitelMegrendelo == false)

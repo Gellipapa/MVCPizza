@@ -87,6 +87,21 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         }
 
+        //private void buttonTorolMegrendelot_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void törölTesztadatokatToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void feltöltésTesztadatokkalToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
         //private void feltöltésTesztadatokkalToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 
