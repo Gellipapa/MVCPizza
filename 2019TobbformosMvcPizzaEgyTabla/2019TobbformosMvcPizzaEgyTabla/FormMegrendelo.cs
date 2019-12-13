@@ -399,7 +399,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
             if ((dataGridViewOrders.Rows != null) &&
                 (dataGridViewOrders.Rows.Count > 0))
                 dataGridViewOrders.Rows[0].Selected = true;
-            buttonUjMegrendelo.Visible = false;
+            buttonUjMegrendelo.Visible = true;
             panelMegrendloAdatokPanel.Visible = false;
             buttonMegsemMegrendelo.Visible = false;
             panelMegrendeloModositTorolGombok.Visible = false;

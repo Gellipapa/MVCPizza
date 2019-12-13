@@ -68,6 +68,7 @@
             this.buttonUjPizza = new System.Windows.Forms.Button();
             this.buttonBetoltesPizzak = new System.Windows.Forms.Button();
             this.dataGridViewPizzak = new System.Windows.Forms.DataGridView();
+            this.tabPageMegrendelok = new System.Windows.Forms.TabPage();
             this.tabPageFutarok = new System.Windows.Forms.TabPage();
             this.buttonMegsemMegrendelo = new System.Windows.Forms.Button();
             this.buttonUjmegrendeloMentese = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.buttonMegrendeloModosit = new System.Windows.Forms.Button();
             this.buttonMegrendeloBetoltes = new System.Windows.Forms.Button();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
-            this.tabPageMegrendelok = new System.Windows.Forms.TabPage();
             this.errorProviderPizzaName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderPizzaPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderMegrendeloName = new System.Windows.Forms.ErrorProvider(this.components);
@@ -452,6 +452,16 @@
             this.dataGridViewPizzak.Size = new System.Drawing.Size(652, 623);
             this.dataGridViewPizzak.TabIndex = 0;
             // 
+            // tabPageMegrendelok
+            // 
+            this.tabPageMegrendelok.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMegrendelok.Name = "tabPageMegrendelok";
+            this.tabPageMegrendelok.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMegrendelok.Size = new System.Drawing.Size(1000, 623);
+            this.tabPageMegrendelok.TabIndex = 2;
+            this.tabPageMegrendelok.Text = "Futárok kezelése";
+            this.tabPageMegrendelok.UseVisualStyleBackColor = true;
+            // 
             // tabPageFutarok
             // 
             this.tabPageFutarok.Controls.Add(this.buttonMegsemMegrendelo);
@@ -516,6 +526,7 @@
             this.panelMegrendloAdatokPanel.Name = "panelMegrendloAdatokPanel";
             this.panelMegrendloAdatokPanel.Size = new System.Drawing.Size(291, 217);
             this.panelMegrendloAdatokPanel.TabIndex = 3;
+            this.panelMegrendloAdatokPanel.Visible = false;
             // 
             // textBoxOrderAddress
             // 
@@ -632,16 +643,6 @@
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.Size = new System.Drawing.Size(642, 620);
             this.dataGridViewOrders.TabIndex = 0;
-            // 
-            // tabPageMegrendelok
-            // 
-            this.tabPageMegrendelok.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMegrendelok.Name = "tabPageMegrendelok";
-            this.tabPageMegrendelok.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMegrendelok.Size = new System.Drawing.Size(1000, 623);
-            this.tabPageMegrendelok.TabIndex = 2;
-            this.tabPageMegrendelok.Text = "Futárok kezelése";
-            this.tabPageMegrendelok.UseVisualStyleBackColor = true;
             // 
             // errorProviderPizzaName
             // 
