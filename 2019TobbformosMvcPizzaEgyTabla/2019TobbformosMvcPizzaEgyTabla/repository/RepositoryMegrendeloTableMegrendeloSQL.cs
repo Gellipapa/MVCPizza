@@ -65,7 +65,7 @@ namespace TobbformosPizzaAlkalmazasEgyTabla.Repository
             try
             {
                 connection.Open();
-                string query = "DELETE FROM pemegrendelo WHERE id=" + id;
+                string query = "DELETE FROM pmegrendelo WHERE id=" + id;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

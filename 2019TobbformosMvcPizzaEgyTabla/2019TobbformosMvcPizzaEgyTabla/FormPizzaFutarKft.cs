@@ -82,10 +82,10 @@ namespace _2019TobbformosMvcPizzaEgyTabla
 
         //}
 
-        private void buttonMegsemMegrendelo_Click(object sender, EventArgs e)
-        {
+        //private void buttonMegsemMegrendelo_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         //private void buttonTorolMegrendelot_Click(object sender, EventArgs e)
         //{

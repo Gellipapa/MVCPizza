@@ -324,6 +324,7 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         {
             ujAdatfelvitelMegrendelo = true;
             beallitGombokatTextboxokatUjMegrendelo();
+            buttonMegsemMegrendelo.Visible = true;
             int ujMegrendeloAzonosito = repomegrendelo.getNextMegrendeloId();
             textBoxOrdersID.Text = ujMegrendeloAzonosito.ToString();
         }
@@ -343,17 +344,18 @@ namespace _2019TobbformosMvcPizzaEgyTabla
         /// </summary>
         private void beallitGombokatUjMegrendeloMegsemEsMentes()
         {
-            if ((dataGridViewOrders.Rows != null) &&
-                (dataGridViewOrders.Rows.Count > 0))
-                dataGridViewOrders.Rows[0].Selected = true;
-            buttonUjMegrendelo.Visible = false;
-            buttonMegsemMegrendelo.Visible = false;
-            panelMegrendeloModositTorolGombok.Visible = true;
-            ujAdatfelvitelMegrendelo = false;
+            //if ((dataGridViewOrders.Rows != null) &&
+            //    (dataGridViewOrders.Rows.Count > 0))
+            //    dataGridViewOrders.Rows[0].Selected = true;
+            //buttonUjMegrendelo.Visible = false;
+            //panelMegrendloAdatokPanel.Visible = false;
+            //buttonMegsemMegrendelo.Visible = false;
+            //panelMegrendeloModositTorolGombok.Visible = false;
+            //ujAdatfelvitelMegrendelo = false;
 
-            textBoxOrderName.Text = string.Empty;
-            textBoxOrderAddress.Text = string.Empty;
-            textBoxOrdersPrice.Text = string.Empty;
+            //textBoxOrderName.Text = string.Empty;
+            //textBoxOrderAddress.Text = string.Empty;
+            //textBoxOrdersPrice.Text = string.Empty;
 
         }
 
@@ -390,6 +392,24 @@ namespace _2019TobbformosMvcPizzaEgyTabla
                 buttonUjmegrendeloMentese.Visible = false;
                 buttonMegsemMegrendelo.Visible = false;
             }
+        }
+
+        private void buttonMegsemMegrendelo_Click(object sender, EventArgs e)
+        {
+            if ((dataGridViewOrders.Rows != null) &&
+                (dataGridViewOrders.Rows.Count > 0))
+                dataGridViewOrders.Rows[0].Selected = true;
+            buttonUjMegrendelo.Visible = false;
+            panelMegrendloAdatokPanel.Visible = false;
+            buttonMegsemMegrendelo.Visible = false;
+            panelMegrendeloModositTorolGombok.Visible = false;
+            ujAdatfelvitelMegrendelo = false;
+
+            buttonUjmegrendeloMentese.Visible = false;
+
+            textBoxOrderName.Text = string.Empty;
+            textBoxOrderAddress.Text = string.Empty;
+            textBoxOrdersPrice.Text = string.Empty;
         }
 
 

@@ -184,7 +184,7 @@
             this.törölTesztadatokatToolStripMenuItem,
             this.törölAdatbázisToolStripMenuItem});
             this.adatbázisToolStripMenuItem.Name = "adatbázisToolStripMenuItem";
-            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adatbázisToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.adatbázisToolStripMenuItem.Text = "Adatbázis";
             // 
             // adatázbázisLétrehozásToolStripMenuItem
@@ -286,8 +286,8 @@
             // tabControlPizzaFutarKFT
             // 
             this.tabControlPizzaFutarKFT.Controls.Add(this.tabPagePizzak);
-            this.tabControlPizzaFutarKFT.Controls.Add(this.tabPageFutarok);
             this.tabControlPizzaFutarKFT.Controls.Add(this.tabPageMegrendelok);
+            this.tabControlPizzaFutarKFT.Controls.Add(this.tabPageFutarok);
             this.tabControlPizzaFutarKFT.Location = new System.Drawing.Point(0, 52);
             this.tabControlPizzaFutarKFT.Name = "tabControlPizzaFutarKFT";
             this.tabControlPizzaFutarKFT.SelectedIndex = 0;
@@ -466,7 +466,7 @@
             this.tabPageFutarok.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageFutarok.Size = new System.Drawing.Size(1000, 623);
             this.tabPageFutarok.TabIndex = 1;
-            this.tabPageFutarok.Text = "Futárok kezelése";
+            this.tabPageFutarok.Text = "Megrendelők kezelése";
             this.tabPageFutarok.UseVisualStyleBackColor = true;
             // 
             // buttonMegsemMegrendelo
@@ -593,6 +593,7 @@
             this.panelMegrendeloModositTorolGombok.Name = "panelMegrendeloModositTorolGombok";
             this.panelMegrendeloModositTorolGombok.Size = new System.Drawing.Size(291, 73);
             this.panelMegrendeloModositTorolGombok.TabIndex = 2;
+            this.panelMegrendeloModositTorolGombok.Visible = false;
             // 
             // buttonTorolMegrendelot
             // 
@@ -639,7 +640,7 @@
             this.tabPageMegrendelok.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageMegrendelok.Size = new System.Drawing.Size(1000, 623);
             this.tabPageMegrendelok.TabIndex = 2;
-            this.tabPageMegrendelok.Text = "Megrendelők kezelése";
+            this.tabPageMegrendelok.Text = "Futárok kezelése";
             this.tabPageMegrendelok.UseVisualStyleBackColor = true;
             // 
             // errorProviderPizzaName
